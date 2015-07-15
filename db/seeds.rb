@@ -2,7 +2,7 @@ require 'faker'
 
 User.destroy_all
 Question.destroy_all
-Comment.destroy_all
+Answer.destroy_all
 
 
 name = Faker::Name
@@ -24,6 +24,6 @@ end
 questions = Question.all
 questions.each do |question|
   2.times do
-    Comment.create(question: question, commenter: users.sample, body: company.bs)
+    Answer.create(question: question, answerer: users.sample, body: company.bs)
   end
 end
