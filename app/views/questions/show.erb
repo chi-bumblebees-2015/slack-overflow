@@ -1,0 +1,22 @@
+<div class="container">
+
+<h3><%=@question.title%></h3>
+<p><%=@question.body%></p>
+<% if @question.author == current_user %>
+  <a href ="/questions/<%=@question.id%>/edit">Edit</a>
+  <form action="/questions/<%=@question.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
+<%end%>
+
+
+
+
+
+
+
+
+
+
+</div>

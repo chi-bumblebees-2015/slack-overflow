@@ -1,0 +1,22 @@
+<div class="container">
+
+<% if current_user == @question.author %>
+ <h1>Edit Question</h1>
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p id="errors"><%= error %></p>
+    <% end %>
+  <% end %>
+  <form id="edit_question" action="/questions/<%=@question.id%>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <label for="question[title]">Title</label>
+    <input type="text" name="question[title]" value=<%= @question.title %>>
+    <label for="question[body]">Description</label>
+    <textarea name="question[body]" value=<%= @question.body %>></textarea>
+
+    <input type="submit" value="Edit question">
+  </form>
+<% else %>
+  <p>You do not have access to edit this question.</p>
+<% end %>
+</div>

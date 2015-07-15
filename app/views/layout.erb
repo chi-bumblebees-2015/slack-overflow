@@ -26,8 +26,11 @@
     <div class="brand"><a href="/">Slack Overflow</a></div>
 
     <ul>
+        <li><a id="view-questions" href="/questions/index">View All Questions</a>
       <% if current_user %>
+        <li><a id="new-question" href="/questions/new">Ask A Question</a>
         <li><a id="sign-out" href="/logout">Sign Out</a></li>
+
       <% else %>
         <li><a href="/sessions/new">Sign In</a></li>
         <li><a href="/users/new">Sign Up</a></li>
