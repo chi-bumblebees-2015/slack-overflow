@@ -3,7 +3,21 @@
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px solid #444;
-  color: ;
+    background-color: white;
+
+}
+
+body {
+
+
+
+}
+
+html {
+    background-image: url(https://newevolutiondesigns.com/images/freebies/retro-wallpaper-1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
 }
 
 h1 {
@@ -54,4 +68,36 @@ nav li a:hover {
 
 .errors {
   color: red;
+}
+
+
+form {
+  /*border: 1px solid black;*/
+  border-radius: 5px;
+  padding: 10px;
+  margin: auto 20%;
+  background-color: grey;
+}
+
+input {
+  width: 87%;
+  padding: 3px;
+  margin: 5px 10px;
+  font-weight: lighter;
+  font-family: 'Inconsolata' ;
+}
+
+#submit {
+  color: white;
+  background-color: #333;
+  border: none;
+  margin-left: 80px;
+  width: 50%;
+  font-family: 'Inconsolata' ;
+}
+
+#submit:hover {
+  color: white;
+  background-color: #555;
+  border: none;
 }

@@ -5,11 +5,10 @@
 <div class = "errors"><%= @error %></div>
 <% end %>
 <form action="/sessions" method="post">
-  Email:<br>
-    <input type="text" name="email">
   <br>
-  Password:<br>
-  <input type="password" name="password">
-   <input type="submit" value="login">
+    <input type="text" name="email" placeholder="Email">
+  <br>
+  <input type="password" name="password" placeholder="Password">
+   <input id = "submit" type="submit" value="login">
 </form>
 </div>
