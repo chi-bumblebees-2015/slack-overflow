@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
-  # Remember to create a migration!
+  validates_presence_of :title, :body, :author
+
   belongs_to :author, class_name: "User"
   has_many :comments, as: :commentable
   has_many :answers
