@@ -1,9 +1,15 @@
+<div class = "container">
 <h1>Login</h1>
+
+<% if @error %>
+<div class = "errors"><%= @error %></div>
+<% end %>
 <form action="/sessions" method="post">
   Email:<br>
-  <input type="text" name="email">
+    <input type="text" name="email">
   <br>
   Password:<br>
   <input type="password" name="password">
    <input type="submit" value="login">
 </form>
+</div>
