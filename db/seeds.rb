@@ -10,7 +10,7 @@ internet = Faker::Internet
 company = Faker::Company
 lorem = Faker::Lorem
 3.times do
-  User.create(user_name: name.name, email: internet.email, password_hash: 'password')
+  User.create(user_name: name.name, email: internet.email, password: 'password')
 end
 
 users = User.all
