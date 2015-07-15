@@ -1,8 +1,8 @@
 
-# team name : best-team-ever!
+# team-name : best-team-ever!
 
 ## Team members
-* Mark Donald Kanayochukwu(KC) Amobi
+* Mark Donald Anthony Kanayochukwu(KC) Amobi
 * Matt
 * Evangeline
 * Shawn
