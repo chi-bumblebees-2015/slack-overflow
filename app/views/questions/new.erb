@@ -1,0 +1,10 @@
+<h1>Create a new question</h1>
+
+<form id="new_question" action="/questions" method="post">
+  <label for="question[title]">Title</label>
+  <input type="text" name="question[title]" placeholder="e.g. How do you Ruby?">
+  <label for="question[body]">Description</label>
+  <textarea name="question[body]" placeholder="e.g. Really though, how do you Ruby."></textarea>
+
+  <input type="submit" value="Ask question">
+</form>
