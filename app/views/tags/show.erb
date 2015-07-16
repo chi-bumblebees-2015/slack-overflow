@@ -4,7 +4,7 @@
   <% @questions.each do |question| %>
 
     <li class = "all_li"><a id = "all_a" href="/questions/<%= question.id %>"><%= question.title %></a>
-    <span class="author"><%= question.author.user_name %></span></li><div id = "linebreak"></div><br>
+    <span class="author"><a href="/users/<%=question.author.id%>/profile"><%= question.author.user_name %></a></span></li><div id = "linebreak"></div><br>
   <% end %>
 </ul>
 </div>

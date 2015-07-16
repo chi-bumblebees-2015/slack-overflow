@@ -7,9 +7,9 @@
 
 #slack {
     margin-top: 50px;
-    height: auto; 
-    width: auto; 
-    max-width: 700px; 
+    height: auto;
+    width: auto;
+    max-width: 700px;
     max-height: 700px;
      -webkit-transition:all 0.5s ease-out;
   -moz-transition:all 0.5s ease-out;
@@ -121,7 +121,17 @@ input {
   border: none;
 }
 
+form#vote {
+  background: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
 
+button#up_vote {
+  background: none;
+  border: none;
+}
 
 
 
@@ -171,7 +181,7 @@ h3 {
   width: 50%;
   height: 40px;
   opacity: 0.7;
-  
+
 
 
 }
@@ -206,7 +216,7 @@ input[type="submit"]:hover {
   text-decoration: none;
   padding: 5px;
   font-size: 1.5em;
-  font-family: 'Inconsolata' ; 
+  font-family: 'Inconsolata' ;
   color: darkgrey;
   border: 5px solid orange;
 
@@ -217,10 +227,10 @@ input[type="submit"]:hover {
   text-decoration: none;
   padding: 5px;
   font-size: 1.5em;
-  font-family: 'Inconsolata' ; 
+  font-family: 'Inconsolata' ;
   color: black;
   border: 5px solid orange;
-  background-color: white; 
+  background-color: white;
   opacity: .7;
 
 }

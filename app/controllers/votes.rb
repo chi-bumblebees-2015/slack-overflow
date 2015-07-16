@@ -5,7 +5,8 @@ post '/vote' do
       redirect "/questions/#{params[:id]}"
     elsif params[:type] == 'Answer'
        Vote.find_or_create_by(voter: current_user, votable: Answer.find(params[:id]))
-       redirect "/comments/#{params[:id]}"
+       question = Answer.find(params[:id]).question
+       redirect "/questions/#{question.id}"
     end
   end
 end

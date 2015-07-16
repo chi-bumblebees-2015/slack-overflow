@@ -6,9 +6,9 @@
     <li class = "all_li">
       <% @q=question %>
       <%= erb :'_vote_button_helper' %>
-      <a id = "all_a" href="/questions/<%= question.id %>"><%= question.title %></a>
       <%= question.votes.length %>
-    <span class="author"><%= question.author.user_name %></span></li>
+      <a id = "all_a" href="/questions/<%= question.id %>"><%= question.title %></a>
+    <span class="author"><a href ="/users/<%=question.author.id%>/profile"><%= question.author.user_name %></a></span></li>
     <% question.tags.each do |tag| %>
       <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
     <% end %>
