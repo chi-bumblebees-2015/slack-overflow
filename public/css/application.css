@@ -6,7 +6,7 @@
 }
 
 #slack {
-
+    margin-top: 50px;
     height: auto; 
     width: auto; 
     max-width: 700px; 
@@ -29,7 +29,7 @@
 
 html {
   background-image: url(../images/background.jpg);
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: 100%;
 
 }
@@ -96,7 +96,8 @@ form {
   border-radius: 5px;
   padding: 10px;
   margin: auto 20%;
-  background-color: black;
+  background-color: orange;
+  color: white;
 }
 
 input {
@@ -164,6 +165,66 @@ input {
 h3 {
   text-align: center;
 }
+
+#delete_form {
+
+  width: 50%;
+  height: 40px;
+  opacity: 0.7;
+  
+
+
+}
+
+input[type="submit"] {
+  width: 87%;
+  padding: 3px;
+  margin: 5px 10px;
+  font-weight: lighter;
+  font-family: 'Inconsolata' ;
+  border: none;
+  background-color: white;
+  margin-left: 20px;
+  margin-top: 10px;
+  opacity: .8;
+}
+
+input[type="submit"]:hover {
+  width: 87%;
+  padding: 3px;
+  margin: 5px 10px;
+  font-weight: lighter;
+  font-family: 'Inconsolata' ;
+  border: none;
+  background-color:white ;
+  margin-left: 20px;
+  margin-top: 10px;
+  opacity: 1.0;
+}
+
+#edit_question {
+  text-decoration: none;
+  padding: 5px;
+  font-size: 1.5em;
+  font-family: 'Inconsolata' ; 
+  color: darkgrey;
+  border: 5px solid orange;
+
+}
+
+#edit_question:hover {
+
+  text-decoration: none;
+  padding: 5px;
+  font-size: 1.5em;
+  font-family: 'Inconsolata' ; 
+  color: black;
+  border: 5px solid orange;
+  background-color: white; 
+  opacity: .7;
+
+}
+
 
 
 
