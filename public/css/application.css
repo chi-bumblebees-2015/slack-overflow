@@ -121,7 +121,17 @@ input {
   border: none;
 }
 
+form#vote {
+  background: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
 
+button#up_vote {
+  background: none;
+  border: none;
+}
 
 
 
@@ -216,7 +226,6 @@ input[type="submit"]:hover {
 
   text-decoration: none;
   padding: 5px;
-
   font-family: 'Inconsolata' ;
   color: black;
   opacity: .7;
