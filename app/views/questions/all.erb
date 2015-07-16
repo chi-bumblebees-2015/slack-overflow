@@ -4,13 +4,8 @@
   <% @questions.each do |question| %>
 
     <li class = "all_li">
-      <% if current_user %>
-        <form id="vote" action="/vote" method="POST">
-          <input type="hidden" name="type" value="Question">
-          <input type="hidden" name="id" value="<%= question.id %>">
-          <input type="submit" value="VOTE!">
-        </form>
-      <% end %>
+      <% @q=question %>
+      <%= erb :'_vote_button_helper' %>
       <a id = "all_a" href="/questions/<%= question.id %>"><%= question.title %></a>
       <%= question.votes.length %>
     <span class="author"><%= question.author.user_name %></span></li>
