@@ -59,12 +59,4 @@ get '/questions/:id' do
   erb :'questions/show'
 end
 
-### Render all questions in a certain tag ###
-get '/tags/:id' do
-  @tag = Tag.find(params[:id])
-  @questions = Question.all.select{ |question| question.tags.include?(@tag)}
-
-  erb :'tags/show'
-end
-
 

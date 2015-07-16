@@ -1,0 +1,17 @@
+<div class="new_container">
+<h1>All Tags</h1>
+<ul>
+<% @tags.each do |tag| %>
+  <% if tag.questions.length > 0 %>
+    <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a> <%= tag.questions.length %>
+      <%if tag.questions.length == 1%>
+        question
+      <% else %>
+        questions
+      <% end %>
+    </li>
+  <% end %>
+<% end %>
+</ul>
+
+</div>
