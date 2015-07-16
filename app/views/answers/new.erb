@@ -1,0 +1,7 @@
+ <div class="new_container">
+ <form id="new_answer" action="/questions/<%=@question.id%>/answers" method="post">
+    <label for="answer[body]">Description</label>
+    <textarea name="body" placeholder = "Add Answer"></textarea>
+    <input type="submit" value="Add">
+  </form>
+</div>

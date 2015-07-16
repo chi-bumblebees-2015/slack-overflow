@@ -46,3 +46,6 @@ post '/users' do
     erb :'users/sign_up'
   end
 end
+
+#Answers
+
