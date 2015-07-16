@@ -9,6 +9,18 @@
 <% end %>
 </ul>
 
+<% @q = @question %>
+<%= erb :'_vote_button_helper' %>
+<p><%= @question.votes.length %></p>
+
+<% if @question.author == current_user %>
+  <a href ="/questions/<%=@question.id%>/edit">Edit</a>
+  <form action="/questions/<%=@question.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form><br>
+<% end %>
+
 <h4>Answers: </h4>
 <%@question.answers.order(:created_at).each do |answer|%>
 <p><%= answer.body %><br><br>
@@ -16,8 +28,8 @@
    <% if current_user == answer.answerer %>
     <a href="/questions/<%=@question.id%>/answers/<%=answer.id%>/edit">Edit Answer</a>
     <form action="/questions/<%=@question.id%>/answers/<%=answer.id%>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
     </form><br>
    <% end %>
 </p>
@@ -33,14 +45,5 @@
     <input id = "delete_input" type="submit" value="Delete">
   </form>
 <%end%>
-
-
-
-
-
-
-
-
-
 
 </div>
