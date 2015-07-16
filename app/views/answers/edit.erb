@@ -1,0 +1,14 @@
+<div class="new_container">
+
+<h1>Edit Answer</h1>
+
+ <form id="new_answer" action="/questions/<%=@question.id%>/answers/<%=@answer.id%>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <label for="answer[body]">Description</label>
+    <textarea name="body"> <%= @answer.body %></textarea>
+    <input type="submit" value="Update">
+  </form>
+
+
+
+</div>

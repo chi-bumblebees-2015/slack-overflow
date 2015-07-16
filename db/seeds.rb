@@ -27,3 +27,4 @@ questions.each do |question|
     Answer.create(question: question, answerer: users.sample, body: company.bs)
   end
 end
+
