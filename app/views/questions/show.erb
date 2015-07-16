@@ -1,7 +1,12 @@
 <div class="new_container">
 
-<h3><%=@question.title%></h3>
+<h1 id="all_questions"><%=@question.title%></h1>
 <p><%=@question.body%></p>
+<ul>
+<% @question.tags.each do |tag| %>
+  <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+<% end %>
+</ul>
 <% if @question.author == current_user %>
   <a href ="/questions/<%=@question.id%>/edit">Edit</a>
   <form action="/questions/<%=@question.id%>" method="post">

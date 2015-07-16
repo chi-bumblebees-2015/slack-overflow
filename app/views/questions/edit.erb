@@ -10,9 +10,11 @@
   <form id="edit_question" action="/questions/<%=@question.id%>" method="post">
     <input type="hidden" name="_method" value="put">
     <label for="question[title]">Title</label>
-    <input type="text" name="question[title]" value=<%= @question.title %>>
+    <input type="text" name="question[title]" value="<%= @question.title %>">
     <label for="question[body]">Description</label>
-    <textarea name="question[body]" value=<%= @question.body %>></textarea>
+    <textarea rows="10" cols="40" name="question[body]" ><%= @question.body %></textarea>
+    <label for"question[tag_list]">Tags (separated by commas):</label>
+    <textarea name="question[tag_list]"><%= @question.tag_list %></textarea>
 
     <input type="submit" value="Edit question">
   </form>

@@ -1,0 +1,10 @@
+<div class="new_container">
+<h1 id = "all_questions"><%= @tag.name %> Questions</h1>
+<ul class = "all_ul">
+  <% @questions.each do |question| %>
+
+    <li class = "all_li"><a id = "all_a" href="/questions/<%= question.id %>"><%= question.title %></a>
+    <span class="author"><%= question.author.user_name %></span></li><div id = "linebreak"></div><br>
+  <% end %>
+</ul>
+</div>
