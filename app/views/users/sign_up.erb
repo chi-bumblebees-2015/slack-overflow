@@ -4,16 +4,16 @@
     <div class="errors"><%= @error %></div>
   <% end %>
   <form id="sign-up" method="post" action="/users">
-    <label class="label" for="name">Name</label>
-    <input type="text" name="user[user_name]" value="<%= @user.user_name %>">
+    <label class="label" for="name"></label>
+    <input type="text" name="user[user_name]" value="<%= @user.user_name %>" placeholder="Name:">>
     <br>
 
-    <label class="label" for="email">Email</label>
-    <input type="email" name="user[email]" value="<%= @user.email %>">
+    <label class="label" for="email"></label>
+    <input type="email" name="user[email]" value="<%= @user.email %>" placeholder="Email:">
     <br>
 
-    <label class="label" for="password">Password</label>
-    <input type="password" name="user[password]" placeholder="6 or more characters">
+    <label class="label" for="password" ></label>
+    <input type="password" name="user[password]" placeholder="Password:">
     <br>
 
     <div class="submit"><input type="submit" value="Sign Up"></div>
