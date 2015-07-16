@@ -1,0 +1,8 @@
+<div class= "new_container">
+  <h1>Add Comment</h1>
+   <form id="new_comment" action="/questions/<%=@question.id%>/answers/<%=@answer.id%>/comments" method="post">
+    <label for="comment[body]">Description</label>
+    <textarea name="body" placeholder = "Add Comment"></textarea>
+    <input type="submit" value="Add">
+  </form>
+</div>

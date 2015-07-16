@@ -14,36 +14,59 @@
 <p><%= @question.votes.length %></p>
 
 <% if @question.author == current_user %>
-  <a href ="/questions/<%=@question.id%>/edit">Edit</a>
+  <a href ="/questions/<%=@question.id%>/edit">Edit Question</a>
   <form action="/questions/<%=@question.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
+    <input type="submit" value="Delete Question">
   </form><br>
 <% end %>
 
-<h4>Answers: </h4>
+<!-- <h4>Answers: </h4> -->
 <%@question.answers.order(:created_at).each do |answer|%>
+<h5>Answer: </h5>
+
 <p><%= answer.body %><br><br>
    <%= answer.answerer.user_name %>
    <% if current_user == answer.answerer %>
     <a href="/questions/<%=@question.id%>/answers/<%=answer.id%>/edit">Edit Answer</a>
     <form action="/questions/<%=@question.id%>/answers/<%=answer.id%>" method="post">
       <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete">
+      <input type="submit" value="Delete Answer">
     </form><br>
    <% end %>
 </p>
   <hr>
+
+    <div class= "answer_comments">
+    <h5> Comments for answers </h5>
+    <% answer.comments.each do |comment| %>
+
+      <%= comment.body %><br>
+      <%= comment.commenter.user_name %>
+
+
+      <% if current_user == comment.commenter %>
+    <form action="/questions/<%=@question.id%>/answers/<%=answer.id%>/comments/<%=comment.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete Comment">
+    </form><br>
+   <% end %>
+
+
+      <br><br>
+    <% end %>
+    <a href="/questions/<%=@question.id%>/answers/<%=answer.id%>/comments/new">New Comment</a>
+    </div>
+
+     <hr>
+  <hr>
+  <hr>
+
   <% end %>
+
+
+
  <a href="/questions/<%=@question.id%>/answers/new">Add Answer</a>
 
-<% if @question.author == current_user %>
-
-  <a id = "edit_question" href ="/questions/<%=@question.id%>/edit">Edit Question</a>
-  <form id = "delete_form" action="/questions/<%=@question.id%>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input id = "delete_input" type="submit" value="Delete">
-  </form>
-<%end%>
 
 </div>

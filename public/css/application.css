@@ -224,7 +224,10 @@ input[type="submit"]:hover {
 }
 
 
-
+.answer_comments {
+  padding-left: 70px;
+  font-size: .75em;
+}
 
 
 

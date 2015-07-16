@@ -3,7 +3,7 @@ require 'faker'
 User.destroy_all
 Question.destroy_all
 Answer.destroy_all
-
+Comment.destroy_all
 
 name = Faker::Name
 internet = Faker::Internet
@@ -27,4 +27,12 @@ questions.each do |question|
     Answer.create(question: question, answerer: users.sample, body: company.bs)
   end
 end
+
+answers = Answer.all
+answers.each do |answer|
+  2.times do
+    Comment.create(body: lorem.sentence, commenter: users.sample, commentable: answer)
+  end
+end
+
 

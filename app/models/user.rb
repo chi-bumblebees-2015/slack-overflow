@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   validates :user_name, :length => { :minimum => 3, :message => "must be at least 3 characters, fool!" }
   validates :password, :length => { :minimum => 6 }
-  validates :email, :uniqueness => true, :format => /.+@.+\..+/ # imperfect, but okay
+  validates :email, :uniqueness => true , :format => /.+@.+\..+/ # imperfect, but okay
 
   include BCrypt
 
