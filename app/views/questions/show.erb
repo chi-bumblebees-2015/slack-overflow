@@ -27,7 +27,7 @@
 
 <% if @question.author == current_user %>
 
-  <a id = "edit_question" href ="/questions/<%=@question.id%>/edit">Edit</a>
+  <a id = "edit_question" href ="/questions/<%=@question.id%>/edit">Edit Question</a>
   <form id = "delete_form" action="/questions/<%=@question.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
     <input id = "delete_input" type="submit" value="Delete">
