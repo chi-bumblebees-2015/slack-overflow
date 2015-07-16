@@ -1,0 +1,7 @@
+<% if current_user %>
+    <form id="vote" action="/vote" method="POST">
+      <input type="hidden" name="type" value="Question">
+      <input type="hidden" name="id" value="<%= @q.id %>">
+      <input id="up_vote" type="submit" value="VOTE!">
+    </form>
+  <% end %>
