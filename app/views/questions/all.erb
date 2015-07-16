@@ -3,8 +3,21 @@
 <ul class = "all_ul">
   <% @questions.each do |question| %>
 
-    <li class = "all_li"><a id = "all_a" href="/questions/<%= question.id %>"><%= question.title %></a>
-    <span class="author"><%= question.author.user_name %></span></li><div id = "linebreak"></div><br>
+    <li class = "all_li">
+      <% if current_user %>
+        <form id="vote" action="/vote" method="POST">
+          <input type="hidden" name="type" value="Question">
+          <input type="hidden" name="id" value="<%= question.id %>">
+          <input type="submit" value="VOTE!">
+        </form>
+      <% end %>
+      <a id = "all_a" href="/questions/<%= question.id %>"><%= question.title %></a>
+      <%= question.votes.length %>
+    <span class="author"><%= question.author.user_name %></span></li>
+    <% question.tags.each do |tag| %>
+      <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+    <% end %>
+    <div id = "linebreak"></div><br>
   <% end %>
 </ul>
 

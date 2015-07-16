@@ -7,6 +7,14 @@
   <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
 <% end %>
 </ul>
+  <% if current_user %>
+    <form id="vote" action="/vote" method="POST">
+      <input type="hidden" name="type" value="Question">
+      <input type="hidden" name="id" value="<%= @question.id %>">
+      <input type="submit" value="VOTE!">
+    </form>
+  <% end %>
+<p><%= @question.votes.length %></p>
 <% if @question.author == current_user %>
   <a href ="/questions/<%=@question.id%>/edit">Edit</a>
   <form action="/questions/<%=@question.id%>" method="post">
