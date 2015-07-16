@@ -8,10 +8,10 @@
 <% end %>
 </ul>
 <% if @question.author == current_user %>
-  <a href ="/questions/<%=@question.id%>/edit">Edit</a>
-  <form action="/questions/<%=@question.id%>" method="post">
+  <a id = "edit_question" href ="/questions/<%=@question.id%>/edit">Edit</a>
+  <form id = "delete_form" action="/questions/<%=@question.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
+    <input id = "delete_input" type="submit" value="Delete">
   </form>
 <%end%>
 
