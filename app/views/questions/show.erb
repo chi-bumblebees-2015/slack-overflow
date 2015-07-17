@@ -16,14 +16,17 @@
 
 <% if @question.author == current_user %>
   <a href ="/questions/<%=@question.id%>/edit">Edit Question</a>
-  <form action="/questions/<%=@question.id%>" method="post">
+  <form class="delete" action="/questions/<%=@question.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Question">
+    <input class="delete" type="submit" value="Delete Question">
   </form><br>
 <% end %>
 
+  <hr>
+  <hr>
+  <hr>
 
-<h4>Answers: </h4>
+<h2>Answers: </h2>
 <% @question.answers.order(:created_at).each do |answer|%>
   <p><%= answer.body %></p>
   <p><a href ="/users/<%=answer.answerer.id %>/profile"><%= answer.answerer.user_name %></a></p>
@@ -40,19 +43,16 @@
    <% end %>
   <hr>
     <div class= "answer_comments">
-    <h5> Comments for answers </h5>
     <% answer.comments.each do |comment| %>
-
-      <%= comment.body %><br>
-      <%= comment.commenter.user_name %>
-
+      <p><%= comment.body %></p>
+      <p><a href="/users/<%= comment.commenter.id %>/profile"><%= comment.commenter.user_name %></a></p>
 
       <% if current_user == comment.commenter %>
-    <form action="/questions/<%=@question.id%>/answers/<%=answer.id%>/comments/<%=comment.id%>" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete Comment">
-    </form><br>
-   <% end %>
+        <form class="delete" action="/questions/<%=@question.id%>/answers/<%=answer.id%>/comments/<%=comment.id%>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input class="delete" type="submit" value="Delete">
+        </form><br>
+      <% end %>
 
 
       <br><br>
@@ -60,7 +60,7 @@
     <a href="/questions/<%=@question.id%>/answers/<%=answer.id%>/comments/new">New Comment</a>
     </div>
 
-     <hr>
+  <hr>
   <hr>
   <hr>
 

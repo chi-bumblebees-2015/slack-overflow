@@ -100,7 +100,7 @@ form {
   color: white;
 }
 
-input {
+input, textarea {
   width: 87%;
   padding: 3px;
   margin: 5px 10px;
@@ -176,14 +176,25 @@ h3 {
   text-align: center;
 }
 
-#delete_form {
+form.delete {
+  background: none;
+  width: 10%;
+  margin:0;
+  padding:0;
+}
 
-  width: 50%;
-  height: 40px;
-  opacity: 0.7;
+input[type="submit"].delete{
+  margin: 0;
+  padding: 5px;
+  width: 100%;
+  border-radius: 15%;
+}
 
-
-
+input[type="submit"].delete:hover{
+  margin: 0;
+  padding: 5px;
+  width: 100%;
+  border-radius: 15%;
 }
 
 input[type="submit"] {
@@ -202,13 +213,11 @@ input[type="submit"] {
 input[type="submit"]:hover {
   width: 87%;
   padding: 3px;
-  margin: 5px 10px;
+  margin: 10px 10px 5px 20px;
   font-weight: lighter;
   font-family: 'Inconsolata' ;
   border: none;
-  background-color:white ;
-  margin-left: 20px;
-  margin-top: 10px;
+  background-color:white;
   opacity: 1.0;
 }
 
@@ -228,6 +237,7 @@ input[type="submit"]:hover {
   padding: 5px;
   font-family: 'Inconsolata' ;
   color: black;
+
   opacity: .7;
 
 }
